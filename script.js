@@ -1,18 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Seleccionamos todos los bloques que tengan la clase animar-scroll
     const bloques = document.querySelectorAll('.animar-scroll');
 
     const observador = new IntersectionObserver((entradas) => {
         entradas.forEach(entrada => {
-            // Cuando el bloque entra en la vista del navegador
             if (entrada.isIntersecting) {
-                entrada.target.classList.add('mostrar'); // Activa la animación CSS
+                entrada.target.classList.add('mostrar');
             }
         });
     }, {
-        threshold: 0.15 // Se activa cuando se visualiza el 15% de la sección
+        threshold: 0.15
     });
 
-    // Registramos cada bloque en el observador
     bloques.forEach(bloque => observador.observe(bloque));
 });
