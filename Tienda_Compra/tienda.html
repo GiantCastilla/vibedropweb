@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Drop | Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tienda.css">
+</head>
+<body>
+
+    <h2 class="titulo-tienda">Completa tu Pedido</h2>
+    <a href="../index.html" class="link-volver">← Volver al inicio</a>
+
+    <div class="layout-tienda">
+        <div class="lado-izquierdo">
+            <div class="contenedor-tabla-chica">
+                <table class="tabla-tienda">
+                    <thead><tr><th>Modelo Destacado</th><th>Stock Real</th></tr></thead>
+                    <tbody>
+                        <tr><td>Adidas Samba</td><td>8 pares</td></tr>
+                        <tr><td>Adidas VL Court</td><td>12 pares</td></tr>
+                        <tr><td>Adidas Campus</td><td>6 pares</td></tr>
+                        <tr><td>Vibe Max 90</td><td>10 pares</td></tr>
+                        <tr><td>Drop Retro</td><td>5 pares</td></tr>
+                        <tr><td>Air Jordan 1</td><td>5 pares</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tarjeta-producto">
+                <img src="../Img/adidas-samba.png" id="img-producto" alt="Zapatilla Seleccionada">
+                <h3 id="titulo-producto">Adidas Samba</h3>
+                <p id="desc-producto">El clásico indiscutible de las calles. Diseño atemporal en cuero con su clásica suela de goma retro.</p>
+            </div>
+        </div>
+
+        <div class="lado-derecho">
+            <div class="checkout-container">
+                <form id="form-checkout">
+                    <label for="modelo">Selecciona tu Modelo:</label>
+                    <select id="modelo" required>
+                        <option value="Adidas Samba">Adidas Samba</option>
+                        <option value="Adidas VL Court">Adidas VL Court</option>
+                        <option value="Adidas Campus">Adidas Campus</option>
+                        <option value="Vibe Max 90">Vibe Max 90</option>
+                        <option value="Drop Retro">Drop Retro</option>
+                        <option value="Jordan 1 Premium">Jordan 1 Premium</option>
+                    </select>
+
+                    <label for="talla">Talla (US):</label>
+                    <select id="talla" required>
+                        <option value="8.5">8.5 US</option>
+                        <option value="9.0">9.0 US</option>
+                        <option value="9.5">9.5 US</option>
+                        <option value="10.0">10.0 US</option>
+                    </select>
+
+                    <label>¿Para quién es el pedido?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="destino" value="personal" checked> Para mí</label>
+                        <label class="radio-option"><input type="radio" name="destino" value="regalo"> Es un regalo 🎁</label>
+                    </div>
+
+                    <label id="lbl-nombre">Nombres y Apellidos:</label>
+                    <input type="text" id="nombre" placeholder="Ingresa el nombre completo" required>
+
+                    <label id="lbl-celular">Número de Celular:</label>
+                    <input type="tel" id="celular" placeholder="Ej. 987654321" required>
+
+                    <label id="lbl-correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+
+                    <label>Dirección de Entrega:</label>
+                    <textarea id="direccion" rows="3" placeholder="Av. Universitaria 1234..." required></textarea>
+
+                    <button type="submit" class="btn-pagar">CONFIRMAR PEDIDO</button>
+                </form>
+                <div id="mensaje-exito" class="mensaje-alerta"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="tienda.js"></script>
+</body>
+</html>
