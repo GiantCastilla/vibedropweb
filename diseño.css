@@ -81,7 +81,7 @@ nav a:hover {
 .animar-scroll {
     opacity: 0;
     transform: translateY(-50px);
-    transition: all 0.8s ease-out; /* Controla la velocidad de la transición */
+    transition: all 0.8s ease-out;
 }
 
 .animar-scroll.mostrar {
@@ -120,14 +120,14 @@ th, td {
 thead {
     background-color: #000;
     color: #fff;
-    text-transform: uppercase; /*Letras en mayusculas*/
+    text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1px; /*Espaciado entre letras*/
+    letter-spacing: 1px;
 }
 
 tbody tr:hover {
-    background-color: rgba(255, 79, 0, 0.1); /*Color de fondo al pasar el mouse*/
-    transition: background-color 0.3s ease; /*Transición suave*/
+    background-color: rgba(255, 79, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
 tfoot {
@@ -156,16 +156,16 @@ tr:hover {
     width: 90%;
     max-width: 800px;
     margin: 40px auto;
-    overflow-x: auto;/*Responsive*/
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /*Sombra*/
-    border-radius: 8px; /*Bordes redondeados*/
-    background-color: #fff; /*Fondo blanco*/
+    overflow-x: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px; /*Para que la tabla no se achique demasiado en pantallas pequeñas*/
+    min-width: 500px;
 }
 
 
@@ -226,8 +226,8 @@ table {
 
 .carrusel-item img { 
     width: 100%; 
-    height: 180px;  /* Forzamos el mismo alto para todas */
-    object-fit: contain; /* Las encaja sin deformarlas */
+    height: 180px;
+    object-fit: contain;
     border-radius: 10px; 
     transition: transform 0.3s ease; 
 }
@@ -254,7 +254,7 @@ table {
 
 .btn-comprar-global {
     display: inline-block ;
-    background-color: #ff4f00 ; /* Tu naranja característico */
+    background-color: #ff4f00 ;
     color: white ;
     padding: 15px 40px ;
     border-radius: 5px ;
