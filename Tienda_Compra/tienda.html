@@ -17,13 +17,8 @@
             <div class="contenedor-tabla-chica">
                 <table class="tabla-tienda">
                     <thead><tr><th>Modelo Destacado</th><th>Stock Real</th></tr></thead>
-                    <tbody>
-                        <tr><td>Adidas Samba</td><td>8 pares</td></tr>
-                        <tr><td>Adidas VL Court</td><td>12 pares</td></tr>
-                        <tr><td>Adidas Campus</td><td>6 pares</td></tr>
-                        <tr><td>Vibe Max 90</td><td>10 pares</td></tr>
-                        <tr><td>Drop Retro</td><td>5 pares</td></tr>
-                        <tr><td>Air Jordan 1</td><td>5 pares</td></tr>
+                    <tbody id="cuerpo-tabla-stock">
+                        <!-- Se llenará dinámicamente con JS (Sesión 12) -->
                     </tbody>
                 </table>
             </div>
@@ -37,7 +32,7 @@
 
         <div class="lado-derecho">
             <div class="checkout-container">
-                <form id="form-checkout">
+                <form id="form-checkout" name="formularioCheckout">
                     <label for="modelo">Selecciona tu Modelo:</label>
                     <select id="modelo" required>
                         <option value="Adidas Samba">Adidas Samba</option>
@@ -55,6 +50,7 @@
                         <option value="9.5">9.5 US</option>
                         <option value="10.0">10.0 US</option>
                     </select>
+                    <a href="#guia-tallas-modal" class="link-guia-tallas">📏 ¿Cuál es mi talla? Ver Guía de Tallas</a>
 
                     <label>¿Para quién es el pedido?</label>
                     <div class="radio-group">
@@ -80,6 +76,34 @@
             </div>
         </div>
     </div>
+
+    <!-- INTEGRACIÓN SESIÓN 14: Ventana Flotante (Uso de :target) -->
+    <div id="guia-tallas-modal" class="ventana-flotante">
+        <div class="ventana-contenido">
+            <h3>Guía de Tallas | Vibe Drop</h3>
+            <p>Compara tu medida en centímetros para elegir la talla US correcta:</p>
+            <table class="tabla-modal-tallas">
+                <thead>
+                    <tr>
+                        <th>US (USA)</th>
+                        <th>EU (Europa)</th>
+                        <th>Medida (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>8.5 US</td><td>42</td><td>26.5 cm</td></tr>
+                    <tr><td>9.0 US</td><td>42.5</td><td>27.0 cm</td></tr>
+                    <tr><td>9.5 US</td><td>43</td><td>27.5 cm</td></tr>
+                    <tr><td>10.0 US</td><td>44</td><td>28.0 cm</td></tr>
+                </tbody>
+            </table>
+            <a href="#" class="btn-cerrar-modal">Cerrar Guía</a>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+
+    <!-- Contenedor para el Ticket de Compra Dinámico (Sesión 13) -->
+    <div id="contenedor-ticket" style="max-width: 600px; margin: 20px auto; padding: 0 20px;"></div>
 
     <script src="tienda.js"></script>
 </body>

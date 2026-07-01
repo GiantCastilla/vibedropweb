@@ -81,7 +81,7 @@ nav a:hover {
 .animar-scroll {
     opacity: 0;
     transform: translateY(-50px);
-    transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out; /* Controla la velocidad de la transición */
 }
 
 .animar-scroll.mostrar {
@@ -120,14 +120,14 @@ th, td {
 thead {
     background-color: #000;
     color: #fff;
-    text-transform: uppercase;
+    text-transform: uppercase; /*Letras en mayusculas*/
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1px; /*Espaciado entre letras*/
 }
 
 tbody tr:hover {
-    background-color: rgba(255, 79, 0, 0.1);
-    transition: background-color 0.3s ease;
+    background-color: rgba(255, 79, 0, 0.1); /*Color de fondo al pasar el mouse*/
+    transition: background-color 0.3s ease; /*Transición suave*/
 }
 
 tfoot {
@@ -156,16 +156,16 @@ tr:hover {
     width: 90%;
     max-width: 800px;
     margin: 40px auto;
-    overflow-x: auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    background-color: #fff;
+    overflow-x: auto;/*Responsive*/
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /*Sombra*/
+    border-radius: 8px; /*Bordes redondeados*/
+    background-color: #fff; /*Fondo blanco*/
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px;
+    min-width: 500px; /*Para que la tabla no se achique demasiado en pantallas pequeñas*/
 }
 
 
@@ -226,8 +226,8 @@ table {
 
 .carrusel-item img { 
     width: 100%; 
-    height: 180px;
-    object-fit: contain;
+    height: 180px;  /* Forzamos el mismo alto para todas */
+    object-fit: contain; /* Las encaja sin deformarlas */
     border-radius: 10px; 
     transition: transform 0.3s ease; 
 }
@@ -254,7 +254,7 @@ table {
 
 .btn-comprar-global {
     display: inline-block ;
-    background-color: #ff4f00 ;
+    background-color: #ff4f00 ; /* Tu naranja característico */
     color: white ;
     padding: 15px 40px ;
     border-radius: 5px ;
@@ -313,12 +313,22 @@ table {
 
 .promo-texto {
     grid-area: texto;
-    animation: deslizarIzquierda 0.9s ease forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .promo-imagen {
     grid-area: imagen;
-    animation: deslizarDerecha 0.9s ease forwards;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.seccion-promo.visible .promo-texto,
+.seccion-promo.visible .promo-imagen {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .promo-badge {
@@ -627,5 +637,373 @@ footer {
 
     .promo-texto h2 {
         font-size: 1.4rem;
+    }
+}
+/* ── Cards de disponibilidad de tallas ── */
+.cards-disponibilidad {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 1rem;
+}
+
+.card-stock {
+    background: #fff;
+    border-top: 3px solid #ff4f00;
+    padding: 1.25rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 140px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-stock:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 79, 0, 0.15);
+}
+
+.modelo-nombre {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #111;
+}
+
+.modelo-talla {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.modelo-stock {
+    background-color: #ff4f00;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ── Página de Contacto independiente ── */
+.pagina-contacto {
+    width: 85%;
+    max-width: 560px;
+    margin: 3rem auto 4rem;
+    text-align: center;
+}
+
+.titulo-pagina {
+    color: #ff4f00;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.link-volver {
+    display: inline-block;
+    color: #555;
+    font-size: 0.875rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.link-volver:hover {
+    color: #ff4f00;
+}
+
+/* ════════════════════════════════════════════════════════
+   NUEVAS FUNCIONALIDADES JS/RESPONSIVE
+   ════════════════════════════════════════════════════════ */
+
+/* ── Botón hamburguesa: oculto en escritorio ── */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.menu-toggle:hover {
+    color: #ff4f00;
+}
+
+/* ── Header con sombra al hacer scroll (JS añade esta clase) ── */
+.header-scrolled {
+    box-shadow: 0 4px 18px rgba(255, 79, 0, 0.25);
+    transition: box-shadow 0.3s ease;
+}
+
+/* ── Botón volver arriba ── */
+#btn-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ff4f00;
+    color: #fff;
+    border: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(255, 79, 0, 0.35);
+}
+
+#btn-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#btn-top:hover {
+    transform: translateY(-4px);
+    background-color: #cc3f00;
+}
+
+/* ── Mensaje de éxito del formulario ── */
+.msg-exito {
+    display: none;
+    background-color: #e6f9f0;
+    border-left: 4px solid #25c76a;
+    color: #1a7a44;
+    padding: 1rem 1.25rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: left;
+    max-width: 500px;
+    margin: 1rem auto 0;
+}
+
+.msg-exito.mostrar {
+    display: block;
+    animation: aparecer 0.4s ease;
+}
+
+.msg-exito i {
+    color: #25c76a;
+    margin-right: 0.5rem;
+}
+
+/* ── Ícono de email en redes sociales ── */
+.email-social {
+    background-color: #ff4f00;
+}
+
+/* ── Sección Nosotros Mejorada ── */
+.seccion-nosotros-vibe {
+    padding: 5rem 1.25rem;
+    width: 90%;
+    max-width: 1000px; /* Un poco más ancho para albergar las dos tarjetas lado a lado */
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nosotros-cabecera {
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.nosotros-tagline {
+    display: inline-block;
+    color: #ff4f00;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.nosotros-titulo-principal {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nosotros-linea-decorativa {
+    width: 60px;
+    height: 4px;
+    background-color: #ff4f00;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.nosotros-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nosotros-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(255, 79, 0, 0.12);
+    border-color: rgba(255, 79, 0, 0.15);
+}
+
+.nosotros-icono-contenedor {
+    width: 75px;
+    height: 75px;
+    background: rgba(255, 79, 0, 0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nosotros-icono-contenedor i {
+    color: #ff4f00;
+    font-size: 2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nosotros-card:hover .nosotros-icono-contenedor {
+    background-color: #ff4f00;
+}
+
+.nosotros-card:hover .nosotros-icono-contenedor i {
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.nosotros-card h3 {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+}
+
+.nosotros-card p {
+    color: #555;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.nosotros-card-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.nosotros-card-footer span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.nosotros-card:hover .nosotros-card-footer span {
+    color: #ff4f00;
+}
+
+/* Decoración lineal en el borde superior de cada tarjeta */
+.nosotros-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nosotros-card:hover::before {
+    background-color: #ff4f00;
+}
+
+/* ════════════════════════════════════════════════════════
+   RESPONSIVE: MENÚ HAMBURGUESA (sobreescribe reglas anteriores)
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ocultar el nav por defecto en móvil */
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        border-top: 1px solid #333;
+        padding: 0.5rem 0;
+        order: 3; /* Lo pone debajo del logo y el botón */
+    }
+
+    /* Mostrar el nav cuando tiene la clase .activo (JS) */
+    #nav-menu.activo {
+        display: flex;
+    }
+
+    /* El header-container permite que el nav se expanda debajo */
+    .header-container {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    /* Cada enlace del menú desplegado */
+    #nav-menu a {
+        margin: 0;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        border-bottom: 1px solid #222;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    /* Mostrar el texto de los enlaces en el menú desplegado */
+    #nav-menu a span {
+        display: inline;
+        font-size: 0.9rem;
+    }
+
+    #nav-menu a:hover {
+        background-color: #1a1a1a;
     }
 }

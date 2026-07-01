@@ -18,98 +18,82 @@
     <header>
         <div class="header-container">
             <h1 class="logo">Vibe Drop</h1>
-            <nav>
+
+            <!-- Botón hamburguesa: solo visible en móvil -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
                 <a href="#nosotros"><i class="fa-solid fa-users"></i> <span>Nosotros</span></a>
                 <a href="#tallas"><i class="fa-solid fa-shoe-prints"></i> <span>Tallas</span></a>
-                <a href="#contacto"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
-                <a href="Tienda_Compra/tienda.html" style = "color: #ff4f00; font-weight: bold;"><i class="fa-solid fa-cart-shopping"></i> <span>Carrito</span></a>
+                <a href="contacto.html"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+                <a href="Tienda_Compra/tienda.html" style="color: #ff4f00; font-weight: bold;"><i class="fa-solid fa-cart-shopping"></i> <span>Carrito</span></a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="imagen-principal ">
+        <section class="imagen-principal">
             <div>
                 <img src="Img/img1.png" alt="Zapatillas exclusivas Vibe Drop">
             </div>
         </section>
 
-        <section id="nosotros" class="seccion-contenido animar-scroll">
-            <h2>¿Quiénes Somos?</h2>
-            <p>Vibe Drop es un espacio dedicado a la comercialización de calzado urbano y deportivo de edición limitada.</p>
+        <section id="nosotros" class="seccion-nosotros-vibe animar-scroll">
+            <div class="nosotros-cabecera">
+                <span class="nosotros-tagline">Nuestra Esencia</span>
+                <h2 class="nosotros-titulo-principal">Quiénes Somos & Visión</h2>
+                <div class="nosotros-linea-decorativa"></div>
+            </div>
 
-            <h2>Nuestra Visión</h2>
-            <p>Convertirnos en el catálogo digital líder de calzado streetwear a nivel nacional, ofreciendo una mejor experiencia de usuario y garantizando confianza total a nuestros futuros clientes.</p>
-        </section>
+            <div class="nosotros-grid">
+                <div class="nosotros-card">
+                    <div class="nosotros-icono-contenedor">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3>¿Quiénes Somos?</h3>
+                    <p>Vibe Drop es un espacio dedicado a la comercialización de calzado urbano y deportivo de edición limitada.</p>
+                    <div class="nosotros-card-footer">
+                        <span>Estilo & Hype</span>
+                    </div>
+                </div>
 
-
-        
-        <section class = "seccion-carrusel animar-scroll">
-            <h2>Nuestros modelos destacados</h2>
-            <div class = "carrusel-contenedor">
-                <div class = "carrusel-track">
-                    <div class = "carrusel-item"><img src="Img/Vibe Max 90.png" alt="Vibe Max 90"><p>Vibe Max 90</p></div>
-                    <div class = "carrusel-item"><img src="Img/Drop Retro.png" alt="Drop Retro"><p>Drop Retro</p></div>
-                    <div class = "carrusel-item"><img src="Img/Air Jordan 1.png" alt="Jordan 1"><p>Jordan 1</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-samba.png" alt="Adidas Samba"><p>Adidas Samba</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-vl-court.png" alt="Adidas VL Court"><p>Adidas VL Court</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-campus.png" alt="Adidas Campus"><p>Adidas Campus</p></div>
-                    
-                    <div class = "carrusel-item"><img src="Img/Vibe Max 90.png" alt="Vibe Max 90"><p>Vibe Max 90</p></div>
-                    <div class = "carrusel-item"><img src="Img/Drop Retro.png" alt="Drop Retro"><p>Drop Retro</p></div>
-                    <div class = "carrusel-item"><img src="Img/Air Jordan 1.png" alt="Jordan 1"><p>Jordan 1</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-samba.png" alt="Adidas Samba"><p>Adidas Samba</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-vl-court.png" alt="Adidas VL Court"><p>Adidas VL Court</p></div>
-                    <div class = "carrusel-item"><img src="Img/adidas-campus.png" alt="Adidas Campus"><p>Adidas Campus</p></div>
+                <div class="nosotros-card">
+                    <div class="nosotros-icono-contenedor">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Nuestra Visión</h3>
+                    <p>Convertirnos en el catálogo digital líder de calzado streetwear a nivel nacional, ofreciendo una mejor experiencia de usuario y garantizando confianza total a nuestros futuros clientes.</p>
+                    <div class="nosotros-card-footer">
+                        <span>El Futuro del Streetwear</span>
+                    </div>
                 </div>
             </div>
-            
         </section>
 
-        <section id="tallas" class="seccion-contenido animar-scroll">
-            <h2>Disponibilidad de Tallas</h2>
-            <div class="contenedor-tabla animar-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Modelo</th>
-                            <th>Talla US</th>
-                            <th>Stock</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Vibe Max 90</td>
-                            <td>9.5</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>Drop Retro</td>
-                            <td>10.0</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>Air Jordan 1</td>
-                            <td>8.5</td>
-                            <td>5</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2">Total de pares disponibles</td>
-                            <td>20</td>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <p class="texto-llamado">¡Y hay más! Dale al botón de abajo <i class="fa-solid fa-arrow-down-long"></i></p>
-            <div class="bloque-boton-centrado">
-                <a href="Tienda_Compra/tienda.html" class="btn-comprar-global">Ver todos los modelos disponibles</a>
+        <section class="seccion-carrusel animar-scroll">
+            <h2>Nuestros modelos destacados</h2>
+            <div class="carrusel-contenedor">
+                <div class="carrusel-track">
+                    <div class="carrusel-item"><img src="Img/Vibe Max 90.png" alt="Vibe Max 90"><p>Vibe Max 90</p></div>
+                    <div class="carrusel-item"><img src="Img/Drop Retro.png" alt="Drop Retro"><p>Drop Retro</p></div>
+                    <div class="carrusel-item"><img src="Img/Air Jordan 1.png" alt="Jordan 1"><p>Jordan 1</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-samba.png" alt="Adidas Samba"><p>Adidas Samba</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-vl-court.png" alt="Adidas VL Court"><p>Adidas VL Court</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-campus.png" alt="Adidas Campus"><p>Adidas Campus</p></div>
+
+                    <div class="carrusel-item"><img src="Img/Vibe Max 90.png" alt="Vibe Max 90"><p>Vibe Max 90</p></div>
+                    <div class="carrusel-item"><img src="Img/Drop Retro.png" alt="Drop Retro"><p>Drop Retro</p></div>
+                    <div class="carrusel-item"><img src="Img/Air Jordan 1.png" alt="Jordan 1"><p>Jordan 1</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-samba.png" alt="Adidas Samba"><p>Adidas Samba</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-vl-court.png" alt="Adidas VL Court"><p>Adidas VL Court</p></div>
+                    <div class="carrusel-item"><img src="Img/adidas-campus.png" alt="Adidas Campus"><p>Adidas Campus</p></div>
+                </div>
             </div>
         </section>
-        
-        
-        <section class="seccion-promo animar-scroll">
+
+        <section class="seccion-promo">
             <div class="promo-grid">
                 <div class="promo-texto">
                     <span class="promo-badge">
@@ -117,7 +101,7 @@
                     </span>
                     <h2>Hecho para los que<br>marcan tendencia.</h2>
                     <p>Color exclusivo. Diseño que se ve, se siente y se vive. La colección más atrevida de Vibe Drop ya está disponible.</p>
-                    <a href="#contacto" class="btn-promo">Quiero el mío</a>
+                    <a href="Tienda_Compra/tienda.html" class="btn-promo">Quiero el mío</a>
                 </div>
 
                 <div class="promo-imagen">
@@ -126,38 +110,39 @@
             </div>
         </section>
 
-        <section id="contacto" class="seccion-contenido animar-scroll">
-            <h2>Contáctanos</h2>
+        <section id="tallas" class="seccion-contenido animar-scroll">
+            <h2>Disponibilidad de Tallas</h2>
+            <p>Una muestra de los modelos con mayor stock disponible ahora mismo.</p>
 
-            <div class="redes-sociales">
-                <a href="#" class="red-social instagram" title="Síguenos en Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="red-social tiktok" title="Síguenos en TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="#" class="red-social whatsapp" title="Escríbenos por WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="red-social facebook" title="Síguenos en Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+            <div class="cards-disponibilidad">
+                <div class="card-stock">
+                    <span class="modelo-nombre">Vibe Max 90</span>
+                    <span class="modelo-talla">US 9.5</span>
+                    <span class="modelo-stock">10 pares</span>
+                </div>
+                <div class="card-stock">
+                    <span class="modelo-nombre">Drop Retro</span>
+                    <span class="modelo-talla">US 10.0</span>
+                    <span class="modelo-stock">5 pares</span>
+                </div>
+                <div class="card-stock">
+                    <span class="modelo-nombre">Air Jordan 1</span>
+                    <span class="modelo-talla">US 8.5</span>
+                    <span class="modelo-stock">5 pares</span>
+                </div>
             </div>
 
-            <form action="#" method="post">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
-
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
-
-                <label for="mensaje">Tu mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Buscas algún modelo en especial?"></textarea>
-
-                <input type="submit" value="Enviar Datos">
-            </form>
+            <p class="texto-llamado">¡Y hay más modelos! Encuéntralos en la tienda <i class="fa-solid fa-arrow-down-long"></i></p>
+            <div class="bloque-boton-centrado">
+                <a href="Tienda_Compra/tienda.html" class="btn-comprar-global">Ver todos los modelos disponibles</a>
+            </div>
         </section>
     </main>
+
+    <!-- Botón volver arriba -->
+    <button id="btn-top" title="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <footer>
         <div class="footer-contenido">
@@ -165,7 +150,7 @@
             <div class="footer-redes">
                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/51964038366" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>

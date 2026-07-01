@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Drop | Contacto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="diseño.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Vibe Drop</h1>
+
+            <!-- Botón hamburguesa -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
+                <a href="index.html#nosotros"><i class="fa-solid fa-users"></i> <span>Nosotros</span></a>
+                <a href="index.html#tallas"><i class="fa-solid fa-shoe-prints"></i> <span>Tallas</span></a>
+                <a href="contacto.html" style="color: #ff4f00; font-weight: bold;"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+                <a href="Tienda_Compra/tienda.html"><i class="fa-solid fa-cart-shopping"></i> <span>Carrito</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="pagina-contacto">
+            <h2 class="titulo-pagina">Contáctanos</h2>
+            <a href="index.html" class="link-volver">← Volver al inicio</a>
+
+            <!-- Íconos con links reales: mailto y wa.me -->
+            <div class="redes-sociales">
+                <a href="https://www.instagram.com/vibedrop" target="_blank" class="red-social instagram" title="Síguenos en Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@vibedrop" target="_blank" class="red-social tiktok" title="Síguenos en TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://wa.me/51964038366" target="_blank" class="red-social whatsapp" title="Escríbenos por WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:vibedrop@gmail.com" class="red-social email-social" title="Envíanos un correo">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <!-- id para que JS pueda interceptar el submit -->
+            <form id="form-contacto" name="formularioContacto">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+
+                <label for="mensaje">Tu mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Buscas algún modelo en especial?"></textarea>
+
+                <input type="submit" value="Enviar Datos">
+            </form>
+
+            <!-- Mensaje de éxito: lo muestra JavaScript -->
+            <div id="msg-exito" class="msg-exito"></div>
+        </div>
+    </main>
+
+    <!-- Botón volver arriba -->
+    <button id="btn-top" title="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2026 Vibe Drop - Todos los derechos reservados</p>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/vibedrop" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@vibedrop" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/51964038366" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:vibedrop@gmail.com" title="Correo"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

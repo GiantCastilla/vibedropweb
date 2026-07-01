@@ -26,7 +26,7 @@ body {
 
 .layout-tienda {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Mitad y mitad */
     gap: 40px;
     max-width: 1100px;
     margin: 0 auto;
@@ -171,4 +171,161 @@ select, input, textarea {
 
 @media (max-width: 800px) {
     .layout-tienda { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   NUEVAS MEJORAS ACADÉMICAS (Basadas en diapositivas de clase)
+   ========================================================================== */
+
+/* ── 1. Estilos para Ventana Flotante / Modal (Sesión 14) ── */
+.ventana-flotante {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 420px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+    animation: aparecerModal 0.3s ease;
+}
+
+/* Muestra el modal utilizando la pseudo-clase :target explicada en clase */
+.ventana-flotante:target {
+    display: block;
+}
+
+/* Fondo oscuro semi-transparente que cubre la pantalla */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+}
+
+/* Muestra el fondo oscuro cuando el modal está activo (:target) */
+.ventana-flotante:target + .modal-overlay {
+    display: block;
+}
+
+.ventana-flotante h3 {
+    color: #ff4f00;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.ventana-flotante p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ventana-flotante table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.ventana-flotante th, .ventana-flotante td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 13px;
+}
+
+.ventana-flotante th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.btn-cerrar-modal {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-cerrar-modal:hover {
+    background: #333;
+}
+
+.link-guia-tallas {
+    display: inline-block;
+    color: #ff4f00;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.link-guia-tallas:hover {
+    text-decoration: underline;
+}
+
+/* ── 2. Estilos para Ticket de Compra Dinámico (Sesión 13 - createElement) ── */
+.ticket-compra {
+    background-color: #fff;
+    color: #333;
+    border: 2px dashed #ff4f00;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: left;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ticket-compra h4 {
+    text-align: center;
+    color: #ff4f00;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ticket-compra p {
+    margin: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 4px;
+    line-height: 1.4;
+}
+
+.btn-cerrar-ticket {
+    background-color: #000;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn-cerrar-ticket:hover {
+    background-color: #333;
+}
+
+@keyframes aparecerModal {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
 }
